@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 //   Direct location with .html file located and can get to all items in public
-// app.use(express.static(path.join(__dirname, './app/public')));
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 // Testing how to get to the folder where the home html was located
 // app.get('/home', function (req, res) {
@@ -22,8 +22,8 @@ app.use(express.json());
 
 
 // Setting up routes
-require('./app/public/routing/apiRoutes.js')(app);
-require('./app/public/routing/htmlRoutes.js')(app);
+require('./app/routing/apiRoutes.js')(app);
+require('./app/routing/htmlRoutes.js')(app);
 
 app.listen(PORT, function(){
   console.log(`App is now listening on PORT ${PORT}`);
