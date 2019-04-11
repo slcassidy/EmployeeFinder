@@ -12,13 +12,6 @@ app.use(express.json());
 //   Direct location with .html file located and can get to all items in public
 app.use(express.static(path.join(__dirname, 'app/public')));
 
-// Testing how to get to the folder where the home html was located
-// app.get('/home', function (req, res) {
-//     res.sendFile(path.join(__dirname,'./app/public/home.html'));
-//   });
-
-
-
 
 
 // Setting up routes

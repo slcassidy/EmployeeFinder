@@ -8,14 +8,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
   
   <!-- <script src="./js/survey.js"></script> -->
   <!-- <script src="/Homework/EmployeeFinder/app/public/js/survey.js"></script> -->
   <!-- <script src="../public/js/survey.js"></script> -->
 
-  <script src="js/survey.js"></script>  
   
 
 
@@ -113,8 +111,33 @@
       </form>
     </div>
   </div>
+
+  <!-- Modal Beginning -->
  
- 
-  
+  <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your match is!!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- <p id="alertM">Stock symbol is not valid. Please try again</p> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="alertB" data-dismiss="modal">OK</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Modal1-->
+
+   <!-- JQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <!-- Survey.js -->
+  <script src="js/survey.js"></script>  
+
 </body>
 </html>
