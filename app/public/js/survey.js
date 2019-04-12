@@ -1,3 +1,14 @@
+// Add function to have all options available
+$(function(){
+    const optionList = $(`.custom-select`)
+    optionList.append( `<option selected>Select an Option</option>
+      <option value=1>1 (strongly disagree)</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5 (strongly agree)</option>`)
+});
+
 // Hide the Modal at the beginning
 const hideMod = function(){
     $(`.modal-dialog`).hide();
@@ -11,11 +22,13 @@ const hideMod = function(){
 // Closing the model with the close option
 $(`.close`).on("click", function () {
 hideMod();
+$(`.match`).val("")
 });
 
 // Clear the Alert Button
 $(`#alertB`).on("click", function () {
 hideMod();  
+$(`.match`).val("")
 }); // end of alert button
 
 
@@ -41,8 +54,14 @@ const survey = (() => {
         $('#q9').val(),
         $('#q10').val()]
         };
+
+
        
     console.log(newSurvey);
+    $(`#name`).val(""),
+    $(`#photoLink`).val("")
+    $(`.custom-select`).prop('selectedIndex',0)
+    
 
       $.ajax({
         method: 'POST',
@@ -60,7 +79,7 @@ const survey = (() => {
         event.preventDefault();
         console.log("start results")
         
-        // Here we grab the form elements
+        // Here we grab elements and perform the math on finding the match for the employee
         const match =  function (dataList){
             var totalArray = [];
             var nameArray = [];
@@ -78,7 +97,7 @@ const survey = (() => {
                 for(let x = 0; x < dataList[i].scores.length - 1; x++){
                 
                 let diff = Math.abs(dataList[i].scores[x]) - Math.abs(dataList[last].scores[x]);
-                // console.log(diff)
+                console.log(diff)
                 total += diff;
                               
                     
@@ -108,11 +127,7 @@ const survey = (() => {
             // console.log(totalArray[index].name)
             // **********************
 
-             // Calling the Modal
-    //   $('#myModal').on('shown.bs.modal', function () {
-    //     $('#myInput').trigger('focus')
-    //   });
-    // ******************add back
+
       // Allowing the display of th Modal
       $('.modal-dialog').show();
     // modal-body append with <p>   
@@ -121,10 +136,7 @@ const survey = (() => {
     matchUp.append(`<p> You have been matched with ${nameArray[index]}</p>`);
     $(`.modal-body`).append(matchUp)
 
-    // ${".modal-body"}.append(matchUp);
-
       console.log("show up!!");
-
           }
          
       console.log(match);
@@ -142,6 +154,8 @@ const survey = (() => {
       
 
       $('.btnSurvey').on('click', results)
+
+  
 
     
   })();

@@ -1,0 +1,6 @@
+.modal-dialog{
+    position: fixed;
+    z-index: 999;
+    margin-left: 30%;
+    top: 20%;
+}
