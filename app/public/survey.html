@@ -40,40 +40,36 @@
         <label >Your mind is always buzzing with unexplored ideas and plans.</label>
         
         <!-- show dropdown -->
-        <div class="dropdown  dropdown-scroll" id="selectedClient">
-        <input type="input" class="form-control dropdown-toggle" id="q1" data-toggle="dropdown" >
-        <!-- data-toggle="dropdown" -->
-            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div> -->
-            <!-- </div>
-              <div class="dropdown  dropdown-scroll" id="selectedClient">
-                    <button class="btn btn-block btn-lg btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                        انتخاب <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu " role="menu" aria-labelledby="dropdownMenu1">
-                        <button type="button" class="close">&times;</button>
-                        <form>
-                            <ul>
-                                <li role="presentation">
-                                    <input id="searchSubClientInput" type="text" class="form-control" placeholder="جستجو بر اساس نام خانوادگی" ng-model="query">
-                                </li>
-                            </ul>
-                        </form>
-                        <ul class="select-list scrollable-menu">
-                            <li class="dropdown-header">خودم</li>
-                        </ul>
-                    </div> -->
-                </div>
+        <!-- <input class="form-control input-group-text" for='inputGroupSelect01' id="q1" > -->
+         <select class="custom-select" id="q1">
+              <option selected>Select an Option</option>
+              <option value="1">1 (strongly disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (strongly agree)</option>
+            </select>
+          
+
+          
                 
        <!-- </div> -->
         <h3>Question 2</h3>
         <label>Generally speaking, you rely more on your experience than your imagination.</label>
-        <input type="input" class="form-control" id="q2"  >
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        <h3>Question 3</h3>
+
+        <!-- <input type="input" class="form-control" id="q2"  > -->
+         
+            <select class="custom-select" id="q2">
+            <option selected>Select an Option</option>
+            <option value="1">1 (strongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (strongly agree)</option>
+            </select>
+
+
+       <h3>Question 3</h3>
         <label >You find it easy to stay relaxed and focused even when there is some pressure.</label>
         <input type="input" class="form-control" id="q3"  >
     
@@ -111,6 +107,7 @@
       </form>
     </div>
   </div>
+
 
   <!-- Modal Beginning -->
  

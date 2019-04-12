@@ -17,7 +17,8 @@ hideMod();
 $(`#alertB`).on("click", function () {
 hideMod();  
 }); // end of alert button
-    
+
+
 
 const survey = (() => {
 
@@ -86,10 +87,11 @@ const survey = (() => {
                 console.log(`Name outside the for loop ${name}`)
                 console.log(`total outside the for loop ${total}`)
 
-                totalArray.push({total, name})
-                // totalArray.push({total})
-                // nameArray.push(name)
+                // totalArray.push({total, name})
+                totalArray.push(total)
+                nameArray.push(name)
                 console.log(totalArray)
+                console.log(nameArray)
                 // *******************************
                 
             }
@@ -97,11 +99,12 @@ const survey = (() => {
             // object destructing
             // Check the process to see about the min
             // ******************** add bak
-            // let min = Math.min.apply(...totalArray)
-            let min = 22
-            console.log(min)
+            let min = Math.min(...totalArray);
+            // let min = 22
+            console.log(`The min is here ${min}`)
+            // let index = totalArray.indexOf(min)
             let index = totalArray.indexOf(min)
-            console.log(index)
+            console.log(`the index ${index}`)
             // console.log(totalArray[index].name)
             // **********************
 
@@ -113,10 +116,12 @@ const survey = (() => {
       // Allowing the display of th Modal
       $('.modal-dialog').show();
     // modal-body append with <p>   
+    console.log(totalArray[0].name)
     const matchUp = $('<div>').addClass('match');
-    matchUp.append(`<p>You have been matched with ${totalArray[0].name}</p>`);
+    matchUp.append(`<p> You have been matched with ${nameArray[index]}</p>`);
+    $(`.modal-body`).append(matchUp)
 
-    ${".modal-body"}.append(matchUp);
+    // ${".modal-body"}.append(matchUp);
 
       console.log("show up!!");
 
